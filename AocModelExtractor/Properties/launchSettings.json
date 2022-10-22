@@ -2,7 +2,7 @@
   "profiles": {
     "AocModelExtractor": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\Botw\\Files\\01002B00111A2000\\romfs"
+      "commandLineArgs": "D:\\Games\\Aoc\\romfs"
     }
   }
 }
