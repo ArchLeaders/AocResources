@@ -48,7 +48,7 @@ if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
 
 
 // Run Cethleann extractor
-Console.WriteLine("Extracting RDB Archives. . . (this might take a while)");
+Console.WriteLine("Extracting RDB Archives. . .");
 Directory.CreateDirectory(".\\extracted-rdb");
 Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \".\\extracted-rdb\" \"{args[0]}\\asset\"").WaitForExit();
 
@@ -57,7 +57,7 @@ Console.WriteLine("Loading Hash List. . .");
 string[] hashList = Resource.Load("hash-list").ToString().Split("\n");
 
 // Patch g1t textures
-Console.WriteLine("Patching g1t textures. . . (this might take a while)");
+Console.WriteLine("Patching g1t textures. . .");
 Parallel.ForEach(hashList, hashMap => {
     try {
         string[] hashes = hashMap.Split(" ");
