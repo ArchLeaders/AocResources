@@ -8,7 +8,7 @@ namespace AocModelExtractor
     public class Resource
     {
         internal static readonly string Namespace = typeof(Resource).Namespace ?? "AocModelExtractor";
-        internal static readonly string BaseUrl = $"https://raw.githubusercontent.com/ArchLeaders/{Namespace}/master";
+        internal static readonly string BaseUrl = $"https://raw.githubusercontent.com/ArchLeaders/AocResources/master/";
 
         public byte[] Data { get; set; }
         public Resource(byte[] data) => Data = data;
