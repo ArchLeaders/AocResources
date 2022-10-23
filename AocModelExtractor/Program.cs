@@ -50,7 +50,7 @@ if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . . (this might take a while)");
 Directory.CreateDirectory(".\\extracted-rdb");
-Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--rdb \".\\extracted-rdb\" \"{args[0]}\\asset\"").WaitForExit();
+Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \".\\extracted-rdb\" \"{args[0]}\\asset\"").WaitForExit();
 
 // Load hash list
 Console.WriteLine("Loading Hash List. . .");
