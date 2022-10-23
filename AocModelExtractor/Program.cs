@@ -24,6 +24,7 @@ using ZipArchive arc = new(new MemoryStream(cethleann));
 foreach (var entry in arc.Entries) {
     string file = $".\\Cethleann\\{entry.FullName}";
     if (entry.Length > 0) {
+        Directory.CreateDirectory(Path.GetDirectoryName(file)!);
         entry.ExtractToFile(file, true);
     }
     else {
@@ -42,10 +43,12 @@ if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
     using ZipArchive patchArc = new(new MemoryStream(patch));
     foreach (var entry in patchArc.Entries) {
         string file = $".\\Cethleann\\{entry.FullName}";
+        if (entry.Length > 0) {
+            Directory.CreateDirectory(Path.GetDirectoryName(file)!);
         entry.ExtractToFile(file, true);
     }
 }
-
+}
 
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . .");
