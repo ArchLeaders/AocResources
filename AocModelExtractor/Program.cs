@@ -27,9 +27,6 @@ foreach (var entry in arc.Entries) {
         Directory.CreateDirectory(Path.GetDirectoryName(file)!);
         entry.ExtractToFile(file, true);
     }
-    else {
-        Directory.CreateDirectory(file);
-    }
 }
 
 if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
@@ -45,9 +42,9 @@ if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
         string file = $".\\Cethleann\\{entry.FullName}";
         if (entry.Length > 0) {
             Directory.CreateDirectory(Path.GetDirectoryName(file)!);
-        entry.ExtractToFile(file, true);
+            entry.ExtractToFile(file, true);
+        }
     }
-}
 }
 
 // Run Cethleann extractor
@@ -69,8 +66,10 @@ Parallel.ForEach(hashList, hashMap => {
         string kidsobjdb = hashes[2];
         string folder = kidsobjdb.StartsWith("CharacterEditor") ? "CharacterEditor" : "FieldEditor4";
 
-        File.Copy($".\\extracted-rdb\\{folder}\\g1m\\{model}.g1m", $".\\extracted-rdb\\{folder}\\ktid\\{model}.g1m", true);
+        Directory.CreateDirectory($".\\extracted-rdb\\{folder}\\merged\\{model}");
+        File.Copy($".\\extracted-rdb\\{folder}\\g1m\\{model}.g1m", $".\\extracted-rdb\\{folder}\\merged\\{model}\\{model}.g1m", true);
         Process.Start($".\\Cethleann\\Nyotengu.KTID.exe", $".\\extracted-rdb\\KIDSSystemResource\\kidsobjdb\\{kidsobjdb} .\\extracted-rdb\\MaterialEditor\\g1t .\\extracted-rdb\\{folder}\\ktid\\{ktid}.ktid").WaitForExit();
+        File.Move($".\\extracted-rdb\\{folder}\\ktid\\{ktid}.g1t", $".\\extracted-rdb\\{folder}\\merged\\{model}\\{ktid}.g1t", true);
     }
     catch (Exception ex) {
         string exs = $"[{DateTime.Now}] {ex}\n";
