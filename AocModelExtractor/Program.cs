@@ -20,7 +20,7 @@ await urls["cethleann"]!.DownloadAndExtractAsync(".\\Cethleann", "Cethleann");
 if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
     // Install Cethleann patch
     await urls["cethleann-patch"]!.DownloadAndExtractAsync(".\\Cethleann", "Cethleann Patch");
-    }
+}
 
 // Merge directories
 string[] dirs = Directory.GetDirectories(aoc);
@@ -28,9 +28,9 @@ if (dirs.Select(x => Path.GetFileName(x)).Contains("01002B00111A2000")) {
     Console.WriteLine("Merging AoC directories. . .");
     foreach (var dir in dirs.Where(x => Path.GetFileName(x).StartsWith("01002B00111A"))) {
         DirectoryExt.Copy(dir + "\\romfs\\asset", ".\\romfs\\asset", true);
-        }
-    aoc = ".\\romfs";
     }
+    aoc = ".\\romfs";
+}
 
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . .");
@@ -63,8 +63,19 @@ Parallel.ForEach(hashList, hashMap => {
     }
 });
 
+// Print logs
 File.WriteAllText($".\\log-{timeStamp}.txt", log);
 
-// Cleanup
-
 // Optional: download/install Noesis
+Console.ForegroundColor = ConsoleColor.Blue;
+Console.WriteLine("Do you wish to install Noesis? (Y/n)");
+Console.ResetColor();
+var resp = Console.ReadLine();
+
+if (resp?.ToLower() != "n") {
+    // Download Noesis
+    await urls["noesis"]!.DownloadAndExtractAsync(".\\Noesis", "Noesis");
+
+    // Download Project G1M
+    await urls["project-g1m"]!.DownloadAndExtractAsync(".\\Noesis", "Project G1M");
+}
