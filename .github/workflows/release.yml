@@ -31,10 +31,10 @@ jobs:
         uses: battila7/get-version-action@v2
 
       - name: Publish ${{ env.proj_ame }}
-        run: dotnet publish ${{ env.proj_ame }}/${{ env.proj_ame }}.csproj -r win-x64 --configuration Release --version-suffix ${{ steps.version.outputs.version-without-v }} --output ${{ env.build }} -p:PublishSingleFile=true
+        run: dotnet publish ${{ env.proj_ame }}/${{ env.proj_ame }}.csproj -r win-x64 --configuration Release --version-suffix ${{ steps.version.outputs.version-without-v }} --output ${{ env.build }} --sc false -p:PublishSingleFile=true
 
       - name: Publish ${{ env.proj_ase }}
-        run: dotnet publish ${{ env.proj_ase }}/${{ env.proj_ase }}.csproj -r win-x64 --configuration Release --version-suffix ${{ steps.version.outputs.version-without-v }} --output ${{ env.build }} -p:PublishSingleFile=true
+        run: dotnet publish ${{ env.proj_ase }}/${{ env.proj_ase }}.csproj -r win-x64 --configuration Release --version-suffix ${{ steps.version.outputs.version-without-v }} --output ${{ env.build }} --sc false -p:PublishSingleFile=true
 
       - name: "Release"
         id: create_release
@@ -52,8 +52,8 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ env.build }}/${{ env.proj_ame }}.exe
-          asset_name: ${{ env.proj_ame }}-${{ steps.version.outputs.version }}
-          asset_content_type: application/exe
+          asset_name: ${{ env.proj_ame }}.exe
+          asset_content_type: application/zip
 
       - name: "Upload release asset"
         uses: actions/upload-release-asset@v1
@@ -62,5 +62,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ env.build }}/${{ env.proj_ase }}.exe
-          asset_name: ${{ env.proj_ase }}-${{ steps.version.outputs.version }}
-          asset_content_type: application/exe
+          asset_name: ${{ env.proj_ase }}.exe
+          asset_content_type: application/zip
