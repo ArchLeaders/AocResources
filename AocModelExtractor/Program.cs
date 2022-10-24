@@ -22,23 +22,15 @@ if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
     await urls["cethleann-patch"]!.DownloadAndExtractAsync(".\\Cethleann", "Cethleann Patch");
     }
 
-if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
-
-    // Download Cethleann patch
-    Console.WriteLine("Downloading Cethleann Patch. . .");
-    byte[] patch = await urls["cethleann-patch"]!.DownloadAsync();
-
-    // Extract Cethleann patch
-    Console.WriteLine("Extracting Cethleann Patch. . .");
-    using ZipArchive patchArc = new(new MemoryStream(patch));
-    foreach (var entry in patchArc.Entries) {
-        string file = $".\\Cethleann\\{entry.FullName}";
-        if (entry.Length > 0) {
-            Directory.CreateDirectory(Path.GetDirectoryName(file)!);
-            entry.ExtractToFile(file, true);
+// Merge directories
+string[] dirs = Directory.GetDirectories(aoc);
+if (dirs.Select(x => Path.GetFileName(x)).Contains("01002B00111A2000")) {
+    Console.WriteLine("Merging AoC directories. . .");
+    foreach (var dir in dirs.Where(x => Path.GetFileName(x).StartsWith("01002B00111A"))) {
+        DirectoryExt.Copy(dir + "\\romfs\\asset", ".\\romfs\\asset", true);
         }
+    aoc = ".\\romfs";
     }
-}
 
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . .");
