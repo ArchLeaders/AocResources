@@ -80,9 +80,9 @@ Once you have extracted the files with the previous step, you will be left with 
 ### Extract
 
 - Download the latest [AocSoundExtractor release](./AocSoundExtractor/release).
-- Place the `.exe` in a folder next to your game's (or DLC's) `romfs` folder. *\*<u>(The screenshot shows **AocModelExtractor.exe**, it should be **AocSoundExtractor.exe**)*</u>
+- Place the `.exe` in a folder next to your game's (or DLC's) `romfs` folder.
 
-  <img width="400" src="https://user-images.githubusercontent.com/80713508/197467463-18328c1b-d713-473f-889e-c361aab73783.png">
+  <img width="400" src="https://user-images.githubusercontent.com/80713508/197628795-43faa11b-3d30-449c-b43e-b79aa3d3ab30.png">
 - Open the command line in the folder by typing `cmd` into the path bar.
 - From there, type `AocSoundExtractor.exe .\romfs` and press enter.
 - Wait for the process to finish.
