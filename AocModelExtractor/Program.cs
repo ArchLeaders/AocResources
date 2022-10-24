@@ -35,7 +35,7 @@ if (dirs.Select(x => Path.GetFileName(x)).Contains("01002B00111A2000")) {
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . .");
 Directory.CreateDirectory(".\\extracted-rdb");
-Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \".\\extracted-rdb\" \"{args[0]}\\asset\"").WaitForExit();
+Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \".\\extracted-rdb\" \"{aoc}\\asset\"").WaitForExit();
 
 // Load hash list
 Console.WriteLine("Loading Hash List. . .");
