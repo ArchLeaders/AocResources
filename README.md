@@ -75,6 +75,8 @@ Once you have extracted the files with the previous step, you will be left with 
 - Age of Calamity dumped to RomFS
 - Age of Calamity DLC dumped to RomFS *(optional)*
 
+> *[Video on extracting NSP/XCI to RomFS](https://www.youtube.com/watch?v=oUq0zecwHjY)*
+
 ### Extract
 
 - Download the latest [AocSoundExtractor release](./AocSoundExtractor/release).
