@@ -25,6 +25,7 @@ The quick guide will take you through the proccess of extracting models and text
 
 - Download the latest [AocModelExtractor release](./AocModelExtractor/release).
 - Place the `.exe` in a folder next to your games dumps `romfs` folder.
+
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197467463-18328c1b-d713-473f-889e-c361aab73783.png">
 - Open the command line in the folder by typing `cmd` into the path bar.
 - From there, type `AocModelExtractor.exe .\romfs` and press enter.
@@ -34,6 +35,7 @@ The quick guide will take you through the proccess of extracting models and text
 
 - Download the latest [AocModelExtractor release](./AocModelExtractor/release).
 - Place the `.exe` in a folder next to your game dump.
+
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197467307-57bd2b3f-811f-48a1-a91a-7fbb57955523.png">
 - Open the command line in the folder by typing `cmd` into the path bar.
 - From there, type `AocModelExtractor.exe .\` and press enter.
@@ -54,6 +56,7 @@ Once you have extracted the files with the previous step, you will be left with 
 - Open `Noesis64.exe` from the `Noesis` folder, or your own installed location.
 - Go to the `Tools` menu, and confirm `Display Plugin Tools` is checked.
 - Next go to `Tools > Project G1M` and make sure the settings there match these:
+
   <img width="300" src="https://user-images.githubusercontent.com/80713508/197473185-319822c0-1ceb-41ba-8136-bd90c7a0d5c9.png">
 - Once you have confirmed that, go to `File > Open File` and browse for the `extracted-rdb\merged` folder, open any one of the subfolders and select a `.g1m` file to open. Once you have done that, you can use the built-in browser to open more `.g1m` files easier.
 - Find a model you want to export (you can use [this sheet](./FakeNames.yml) to help you), right click the `.g1m` file in `Noesis` and click `Export`. Leave everythign as default (unless you know what you are doing), and click `Export`.
