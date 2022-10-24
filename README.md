@@ -24,7 +24,7 @@ The quick guide will take you through the proccess of extracting models and text
 ### Extract (without DLC)
 
 - Download the latest [AocModelExtractor release](./AocModelExtractor/release).
-- Place the `.exe` in a folder next to your games dumps `romfs` folder.
+- Place the `.exe` in a folder next to your game's `romfs` folder.
 
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197467463-18328c1b-d713-473f-889e-c361aab73783.png">
 - Open the command line in the folder by typing `cmd` into the path bar.
@@ -77,7 +77,18 @@ Once you have extracted the files with the previous step, you will be left with 
 
 ### Extract
 
-- `...` `...` `...`
+- Download the latest [AocSoundExtractor release](./AocSoundExtractor/release).
+- Place the `.exe` in a folder next to your game's (or DLC's) `romfs` folder. *\*<u>(The screenshot shows **AocModelExtractor.exe**, it should be **AocSoundExtractor.exe**)*</u>
+
+  <img width="400" src="https://user-images.githubusercontent.com/80713508/197467463-18328c1b-d713-473f-889e-c361aab73783.png">
+- Open the command line in the folder by typing `cmd` into the path bar.
+- From there, type `AocSoundExtractor.exe .\romfs` and press enter.
+- Wait for the process to finish.
+- When the process completes, you will be left with a folder of `.ktss` files. These can be opened and exported using [foobar2000](https://www.foobar2000.org/) with the [vgstream](https://vgmstream.org/usage#foo-input-vgmstream-foobar2000-plugin) add-on.
+
+<br>
+
+> If you encounter any errors or need help, feel free to message me in my Discord: https://discord.gg/8Saj6tTkNB | @ArchLeaders
 
 <br>
 
