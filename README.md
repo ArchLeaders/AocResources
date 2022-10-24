@@ -23,7 +23,7 @@ The quick guide will take you through the proccess of extracting models and text
 
 ### Extract (without DLC)
 
-- Download the latest AocModelExtractor [release](./release).
+- Download the latest AocModelExtractor [release](https://github.com/ArchLeaders/AocResources/releases).
 - Place the `.exe` in a folder next to your game's `romfs` folder.
 
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197467463-18328c1b-d713-473f-889e-c361aab73783.png">
@@ -33,7 +33,7 @@ The quick guide will take you through the proccess of extracting models and text
 
 ### Extract (with DLC)
 
-- Download the latest AocModelExtractor [release](./release).
+- Download the latest AocModelExtractor [release](https://github.com/ArchLeaders/AocResources/releases).
 - Place the `.exe` in a folder next to your game dump.
 
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197467307-57bd2b3f-811f-48a1-a91a-7fbb57955523.png">
@@ -79,7 +79,7 @@ Once you have extracted the files with the previous step, you will be left with 
 
 ### Extract
 
-- Download the latest AocSoundExtractor [release](./release).
+- Download the latest AocSoundExtractor [release](https://github.com/ArchLeaders/AocResources/releases).
 - Place the `.exe` in a folder next to your game's (or DLC's) `romfs` folder.
 
   <img width="400" src="https://user-images.githubusercontent.com/80713508/197628795-43faa11b-3d30-449c-b43e-b79aa3d3ab30.png">
