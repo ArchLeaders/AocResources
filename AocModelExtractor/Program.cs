@@ -14,20 +14,13 @@ string log = "";
 string aoc = args[0];
 var urls = Resource.Load("urls.json").ParseJson<Dictionary<string, string?>>()!;
 
-// Download Cethleann
-Console.WriteLine("Downloading Cethleann. . .");
-byte[] cethleann = await urls["cethleann"]!.DownloadAsync();
+// Install Cethleann
+await urls["cethleann"]!.DownloadAndExtractAsync(".\\Cethleann", "Cethleann");
 
-// Extract Cethleann
-Console.WriteLine("Extracting Cethleann. . .");
-using ZipArchive arc = new(new MemoryStream(cethleann));
-foreach (var entry in arc.Entries) {
-    string file = $".\\Cethleann\\{entry.FullName}";
-    if (entry.Length > 0) {
-        Directory.CreateDirectory(Path.GetDirectoryName(file)!);
-        entry.ExtractToFile(file, true);
+if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
+    // Install Cethleann patch
+    await urls["cethleann-patch"]!.DownloadAndExtractAsync(".\\Cethleann", "Cethleann Patch");
     }
-}
 
 if (!string.IsNullOrEmpty(urls["cethleann-patch"])) {
 
