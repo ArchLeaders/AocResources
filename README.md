@@ -4,9 +4,9 @@ This repository contains a set of tools and resources to make extracting assets 
 
 ### Contents:
 
-- **[Models/Textures Extracting Tutorial](#Models%2FTextures%20Extracting%20Tutorial)**
-- **[Sound/Music Extracting Tutorial](#Sound%2FMusic%20Extracting%20Tutorial)**
-- **[Credits and Thanks](#Credits%20and%20Thanks)**
+- **[Models/Textures Extracting Tutorial](#modelstextures-extracting-tutorial)**
+- **[Sound/Music Extracting Tutorial](#soundmusic-extracting-tutorial)**
+- **[Credits and Thanks](#credits-and-thanks)**
 
 ---
 
