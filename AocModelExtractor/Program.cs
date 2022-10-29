@@ -2,9 +2,12 @@
 using AocModelExtractor.Extensions;
 using System.Diagnostics;
 using System.IO.Compression;
+using System.Reflection;
 
 if (args.Length == 0) {
+    Console.ForegroundColor = ConsoleColor.DarkRed;
     Console.WriteLine("Please specify the path to your Age of Calamity game files.");
+    Console.ResetColor();
     Console.ReadLine();
     return;
 }
@@ -35,7 +38,15 @@ if (dirs.Select(x => Path.GetFileName(x)).Contains("01002B00111A2000")) {
 // Run Cethleann extractor
 Console.WriteLine("Extracting RDB Archives. . .");
 Directory.CreateDirectory(".\\extracted-rdb");
-Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \".\\extracted-rdb\" \"{aoc}\\asset\"").WaitForExit();
+Process.Start($".\\Cethleann\\Cethleann.DataExporter.exe", $"--nyotengu \"{Path.GetFullPath(".\\extracted-rdb")}\" \"{Path.GetFullPath($"{aoc}\\asset")}\"").WaitForExit();
+
+if (!Directory.Exists("..\\extracted-rdb\\CharacterEditor") || !Directory.Exists("..\\extracted-rdb\\FieldEditor4")) {
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.WriteLine("Failed to extract the Character and/or Field Editor. Please review your game dump.");
+    Console.ResetColor();
+    Console.ReadLine();
+    return;
+}
 
 // Load hash list
 Console.WriteLine("Loading Hash List. . .");
