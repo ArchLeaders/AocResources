@@ -58,7 +58,7 @@ Once you have extracted the files with the previous step, you will be left with 
 - Next go to `Tools > Project G1M` and make sure the settings there match these:
 
   <img width="300" src="https://user-images.githubusercontent.com/80713508/197473185-319822c0-1ceb-41ba-8136-bd90c7a0d5c9.png">
-- Once you have confirmed that, go to `File > Open File` and browse for the `extracted-rdb\merged` folder, open any one of the subfolders and select a `.g1m` file to open. Once you have done that, you can use the built-in browser to open more `.g1m` files easier.
+- Once you have confirmed that, go to `File > Open File` and browse to the `merged` folder in any one of the subfolders and select a `.g1m` file to open. Once you have done that, you can use the built-in browser to open more `.g1m` files easier.
 - Find a model you want to export (you can use [this sheet](./FakeNames.yml) to help you), right click the `.g1m` file in `Noesis` and click `Export`. Leave everythign as default (unless you know what you are doing), and click `Export`.
 - Use `Noesis` to open the export folder in File Explorer, and there you have your textures and FBX model.
 
